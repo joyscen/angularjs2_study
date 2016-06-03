@@ -76,13 +76,12 @@ import {HeroService} from './hero.service';
 export class HelloComponent implements OnInit{ 
 
     title = 'Tour of Heroes';
-    heroes = [];
+    heroes: Hero[];
     selectedHero: Hero;
 
     constructor(private heroService: HeroService){}
     getHeroes(){
-    //this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+        this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
     }
 
     onSelect(hero: Hero) {

@@ -15,11 +15,9 @@ var HelloComponent = (function () {
     function HelloComponent(heroService) {
         this.heroService = heroService;
         this.title = 'Tour of Heroes';
-        this.heroes = [];
     }
     HelloComponent.prototype.getHeroes = function () {
         var _this = this;
-        //this.heroService.getHeroes().then(heroes => this.heroes = heroes);
         this.heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
     };
     HelloComponent.prototype.onSelect = function (hero) {
